@@ -1,4 +1,4 @@
-package com.alejandromo;
+package com.alejandromo.mensajes_app;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,9 +10,6 @@ public class Conexion {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mensajes_app", "root", "Huguito1@");
-            if (connection != null) {
-                System.out.println("Conexion exitosa.");
-            }
         } catch (SQLException e) {
             System.out.println(e);
         }

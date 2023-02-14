@@ -1,4 +1,4 @@
-package com.alejandromo;
+package com.alejandromo.mensajes_app;
 
 import static org.junit.Assert.assertTrue;
 
