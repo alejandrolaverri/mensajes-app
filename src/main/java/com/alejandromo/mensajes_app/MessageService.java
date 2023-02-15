@@ -20,7 +20,7 @@ public class MessageService {
     }
 
     public static void listMessages() {
-
+        MessageDAO.listMessagesDB();
     }
 
     public static void deleteMessage() {
