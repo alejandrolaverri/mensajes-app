@@ -6,8 +6,7 @@ import java.util.Scanner;
 /**
  * Hello world!
  */
-public class App 
-{
+public class App {
     static String menuMessage = ("---------------------\n"
                                  + "Aplicación de mensajes \n"
                                  + "1. Crear mensaje \n"
@@ -17,7 +16,7 @@ public class App
                                  + "5. Salir \n");
     public static void main( String[] args ) {
         Scanner sc = new Scanner(System.in);
-        int opcion;
+        int opcion = 0;
         do {
             System.out.println(menuMessage);
             opcion = sc.nextInt();
