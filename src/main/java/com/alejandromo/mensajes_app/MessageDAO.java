@@ -1,5 +1,6 @@
 package com.alejandromo.mensajes_app;
 
+import java.io.SyncFailedException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -76,6 +77,25 @@ public class MessageDAO {
     }
 
     public static void updateMessageDB(Message message) {
+        Conexion dbConnect = new Conexion();
+        PreparedStatement ps;
+        ResultSet rs;
 
+        try(Connection connection = dbConnect.getConnection()) {
+            try {
+                String query = "UPDATE mensajes SET mensaje = ? WHERE id_mensaje = ?";
+                ps = connection.prepareStatement(query);
+                ps.setString(1, message.getMessage());
+                ps.setInt(2, message.getMessageId());
+                ps.executeUpdate();
+                System.out.println("Mensaje actualizado correctamente.");
+            } catch (SQLException ex) {
+                System.out.println("No se pudo actualizar el mensaje.");
+                System.out.println(ex);
+            }
+        } catch (SQLException e) {
+            System.out.println("No se pudo actualizar el mensaje.");
+            System.out.println(e);
+        }
     }
 }

@@ -6,6 +6,7 @@ public class MessageService {
 
     public static void createMessage() {
         Scanner sc = new Scanner(System.in);
+
         System.out.println("Escribe tu mensaje:");
         String message = sc.nextLine();
 
@@ -25,12 +26,25 @@ public class MessageService {
 
     public static void deleteMessage() {
         Scanner sc = new Scanner(System.in);
+
         System.out.println("Indica el ID del mensaje a borrar: ");
         int idMessage = sc.nextInt();
         MessageDAO.deleteMessageDB(idMessage);
     }
 
     public static void editMessage() {
+        Scanner sc = new Scanner(System.in);
 
+        System.out.println("Escribe tu nuevo mensaje: ");
+        String message = sc.nextLine();
+
+        System.out.println("Indica el ID del mensaje a editar: ");
+        int idMessage = sc.nextInt();
+
+        Message newMessage = new Message();
+        newMessage.setMessageId(idMessage);
+        newMessage.setMessage(message);
+
+        MessageDAO.updateMessageDB(newMessage);
     }
 }

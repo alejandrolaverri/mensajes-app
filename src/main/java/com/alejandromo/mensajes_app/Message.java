@@ -1,10 +1,10 @@
 package com.alejandromo.mensajes_app;
 
 public class Message {
-    int messageId;
-    String message;
-    String authorMessage;
-    String dateMessage;
+    private int messageId;
+    private String message;
+    private String authorMessage;
+    private String dateMessage;
 
     public Message() {
 

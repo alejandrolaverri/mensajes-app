@@ -1,6 +1,5 @@
 package com.alejandromo.mensajes_app;
 
-import java.sql.Connection;
 import java.util.Scanner;
 
 /**
@@ -16,7 +15,7 @@ public class App {
                                  + "5. Salir \n");
     public static void main( String[] args ) {
         Scanner sc = new Scanner(System.in);
-        int opcion = 0;
+        int opcion;
         do {
             System.out.println(menuMessage);
             opcion = sc.nextInt();
